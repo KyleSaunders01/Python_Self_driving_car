@@ -1,1 +1,12 @@
 protobuf==3.20.0
+
+opencv-python==4.2.0.34
+pandas==1.0.4
+numpy==1.18.5
+matplotlib==3.2.1
+sklearn==0.0
+tensorflow==2.2.0
+imgaug==0.4.0
+python-socketio==4.2.1
+eventlet==0.33.3
+Flask==2.2.5
