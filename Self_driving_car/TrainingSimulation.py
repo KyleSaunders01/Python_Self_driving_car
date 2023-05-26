@@ -11,7 +11,7 @@ path = 'myData'
 data = importDataInfo(path)
 
 ###Step 2
-data = balanceData(data,display=False)
+data = balanceData(data,display=True)
 
 ###Step 3
 imagesPath, steerings = loadData(path,data)
@@ -22,11 +22,11 @@ xTrain,xVal,yTrain,yVal = train_test_split(imagesPath,steerings,test_size=0.2,ra
 print('Total Training Images: ', len(xTrain))
 print('Total Validation Images: ', len(xVal))
 
-###Step 5
+###Step 5 utils.py
 
-###Step 6
+###Step 6 utils.py
 
-###Step 7
+###Step 7 utils.py
 
 ###Step 8
 model = createModel()
@@ -37,7 +37,7 @@ history = model.fit(batchGen(xTrain,yTrain,100,1),steps_per_epoch=300,epochs=10,
           validation_data=batchGen(xVal,yVal,100,0),validation_steps=200)
 
 ###Step 10
-model.save('model.h5')
+model.save('3rndModel.h5')
 print('Model Saved')
 
 plt.plot(history.history['loss'])

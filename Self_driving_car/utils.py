@@ -12,6 +12,7 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Convolution2D,Flatten,Dense
 from tensorflow.keras.optimizers import Adam
 
+###Step 1
 def getName(filePath):
     return filePath.split('\\')[-1]
 def importDataInfo(path):
@@ -24,6 +25,7 @@ def importDataInfo(path):
     print('Total Images Imported: ', data.shape[0])
     return data
 
+###Step 2
 def balanceData(data, display = True):
     nBins = 31
     samplesPerBin = 1000
@@ -57,6 +59,7 @@ def balanceData(data, display = True):
 
     return data
 
+###Step 3
 def loadData(path,data):
     imagesPath = []
     steering = []
@@ -70,6 +73,7 @@ def loadData(path,data):
     steering = np.asarray(steering)
     return imagesPath,steering
 
+###Step 5
 def augmentImage(imgPath, steering):
     img = mpimg.imread(imgPath)
     ### PAN
@@ -91,6 +95,7 @@ def augmentImage(imgPath, steering):
 
     return img, steering
 
+###Step 6
 def preProcessing(img):
     img = img[60:135,:,:]
     img = cv2.cvtColor(img,cv2.COLOR_RGB2YUV)
@@ -100,6 +105,7 @@ def preProcessing(img):
 
     return img
 
+###Step 7
 def batchGen(imagesPath, steeringList, batchSize, trainFlag):
     while True:
         imgBatch = []
@@ -117,6 +123,7 @@ def batchGen(imagesPath, steeringList, batchSize, trainFlag):
             steeringBatch.append(steering)
         yield(np.asarray(imgBatch),np.asarray(steeringBatch))
 
+###Step 8
 def createModel():
     model = Sequential()
 
