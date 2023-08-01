@@ -1,4 +1,4 @@
-﻿Development
+﻿Production
 **Self Driving/Behavioural Cloning Car Readme**
 
 This is a self driving/behavioural cloning car trained using a Convolutional Neural Network (CNN).The Model used to train the self driving car is Nvidia's End-to-End Deep Learning for Self Driving Cars Model (<https://developer.nvidia.com/blog/deep-learning-self-driving-cars/>). This model was used by Nvidia to train a real car, so it was optimal for a car running in a simulation environment. It uses Udacity's open source Self Driving car simulator also used in their Self driving car nanodegree program. It is a supervised regression problem between the car steering angles and the road images in real-time from the cameras the car.	
